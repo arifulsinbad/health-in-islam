@@ -5,12 +5,13 @@ const Read = ({read}) => {
  return (
   <div className='container3'>
    <img src={img} alt="" />
-   <div>
+   <div className='title'>
     <h4>{name}</h4>
     <p>{info}</p>
     <h5>Daily Read: {rating}min</h5>
     <h5>Time Required: {time}min</h5>
    </div>
+    <button>Add to List</button>
   </div>
  );
 };
