@@ -14,3 +14,16 @@
  background-color: rgb(236, 195, 234);
  border-radius: 10px;
 }
+.myInfo{
+ text-align: center;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ gap: 40px;
+ background-color: orchid;
+ margin: 10px;
+ border-radius: 10px;
+}
+h3{
+ text-align: center;
+}
