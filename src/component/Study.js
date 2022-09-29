@@ -13,17 +13,17 @@ const Study = () => {
 
 
  return (
-  <div>
-   <h2>The Importance of Good Health in Islam</h2>
-   <div>
+  <div className='study-c'>
+   <div className='conatiner1'>
+   {/* <h2>The Importance of Good Health in Islam</h2> */}
    {
     study.map(read => <Read key={read.id}
     read={read}
     ></Read> )
    }
    </div>
-   <div>
-    
+   <div className='container2'>
+
    </div>
   
   </div>
