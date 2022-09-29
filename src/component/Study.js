@@ -40,6 +40,7 @@ const times = parseFloat(total);
    <div className='container2'>
 <div className='cart'> 
  <h3>Sinbad Hossain</h3>
+ <p className='small'>Dhaka,Bangladesh</p>
  <div className='myInfo'>
   <span>
    <p>53kg</p>
@@ -55,9 +56,25 @@ const times = parseFloat(total);
   </span>
  </div>
  <h4>Add A Break</h4>
+ <div className='addBreak'>
+  <button className='add'>10min</button>
+  <button className='add'>20min</button>
+  <button className='add'>30min</button>
+  <button className='add'>40min</button>
+ 
+ </div>
+
+ <div>
+  <h4>Study Details</h4>
+ <h5>Study Time: {times}min</h5>
+ <h5>Break Time:</h5>
+
+ </div>
+
+
 </div>
 
-<p>Study Time: {times}min</p>
+
   {
    studies.map(studi => <Time
    studi={studi}
