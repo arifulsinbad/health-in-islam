@@ -41,7 +41,9 @@ let set = 0;
 add.forEach(t =>{
 set = t.time
 })
-addToDb()
+const modal = ()=>{
+  alert('ok complete')
+}
 
 
 const studies = study.filter(x => x.lenght < 4)
@@ -63,6 +65,21 @@ const times = parseFloat(total);
     handleAdd={handleAdd}
     ></Read> )
    }
+
+  <div>
+  <div>
+    <h4>How does react work?</h4>
+    <p>ReactJS divides the UI into isolated reusable pieces of code known as components. React components work similarly to JavaScript functions as they accept arbitrary inputs called properties or props. It's possible to have as many components as necessary without cluttering your code</p>
+   </div>
+   <div>
+<h4>Difference between props and state in react ?</h4>
+<p>Props are used to pass data from one component to another. The state is a local data storage that is local to the component only and cannot be passed to other components.</p>
+   </div>
+   <div>
+    <h4>What is the useEffect in React?</h4>
+    <p>What does useEffect do? By using this Hook, you tell React that your component needs to do something after render. React will remember the function you passed (we'll refer to it as our “effect”), and call it later after performing the DOM updates.</p>
+   </div>
+  </div>
  
    </div>
    <div className='container2'>
@@ -98,7 +115,7 @@ const times = parseFloat(total);
   <h4>Study Details</h4>
  <h5>Study Time: {times}min</h5>
  <h5>Break Time: {set}min</h5>
- <button>Activity Completed</button>
+ <button onClick={ ()=> modal()}>Activity Completed</button>
 
  </div>
 
