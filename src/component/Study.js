@@ -10,7 +10,9 @@ const Study = () => {
   .then(res => res.json())
   .then(data => setStudy(data))
  }, [])
-
+const handleAdd = (study) =>{
+ console.log(study)
+}
 
  return (
   <div className='study-c'>
@@ -19,6 +21,7 @@ const Study = () => {
    {
     study.map(read => <Read key={read.id}
     read={read}
+    handleAdd={handleAdd}
     ></Read> )
    }
    </div>

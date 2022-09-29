@@ -1,6 +1,6 @@
 import React from 'react';
 import './read.css'
-const Read = ({read}) => {
+const Read = ({read, handleAdd}) => {
  const {name, img, info, rating, time}=read;
  return (
   <div className='container3'>
@@ -11,7 +11,7 @@ const Read = ({read}) => {
     <h5>Daily Read: {rating}min</h5>
     <h5>Time Required: {time}min</h5>
    </div>
-    <button>Add to List</button>
+    <button onClick={() =>handleAdd(read)}>Add to List</button>
   </div>
  );
 };
