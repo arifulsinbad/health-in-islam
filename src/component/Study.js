@@ -6,7 +6,14 @@ import Read from './study/Read';
 const Study = () => {
  const [study, setStudy] = useState([]);
  const [time, setTime] = useState([])
- // console.log(study)
+ const [add, setAdd] = useState([])
+//  console.log(add)
+ const timeSet = [
+  {time:10},
+  {time:20},
+  {time:30},
+  {time:40}
+]
  useEffect(() =>{
   fetch('islamic.json')
   .then(res => res.json())
@@ -17,6 +24,15 @@ const handleAdd = (study) =>{
 const newAdd =[...time, study];
 setTime(newAdd)
 }
+const handleTime = (timeSet)=>{
+const newTime = [...add, timeSet]
+setAdd(newTime)
+}
+let set = 0;
+add.forEach(t =>{
+set = t.time
+})
+
 const studies = study.filter(x => x.lenght < 4)
 // console.log(studies)
 let total = 0;
@@ -36,6 +52,7 @@ const times = parseFloat(total);
     handleAdd={handleAdd}
     ></Read> )
    }
+ 
    </div>
    <div className='container2'>
 <div className='cart'> 
@@ -57,17 +74,20 @@ const times = parseFloat(total);
  </div>
  <h4>Add A Break</h4>
  <div className='addBreak'>
-  <button className='add'>10min</button>
-  <button className='add'>20min</button>
-  <button className='add'>30min</button>
-  <button className='add'>40min</button>
+ {
+   timeSet.map(studi => <Time
+   studi={studi}
+   handleTime={handleTime}
+   ></Time> )
+  }
  
  </div>
 
  <div>
   <h4>Study Details</h4>
  <h5>Study Time: {times}min</h5>
- <h5>Break Time:</h5>
+ <h5>Break Time: {set}min</h5>
+ <button>Activity Completed</button>
 
  </div>
 
@@ -75,11 +95,7 @@ const times = parseFloat(total);
 </div>
 
 
-  {
-   studies.map(studi => <Time
-   studi={studi}
-   ></Time> )
-  }
+
 
    </div>
   
