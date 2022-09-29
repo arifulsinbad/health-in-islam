@@ -10,3 +10,7 @@
  grid-template-columns: repeat(3, 1fr);
  gap: 30px;
 }
+.container2{
+ background-color: rgb(236, 195, 234);
+ border-radius: 10px;
+}
