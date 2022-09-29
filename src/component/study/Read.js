@@ -8,6 +8,8 @@ const Read = ({read}) => {
    <div>
     <h4>{name}</h4>
     <p>{info}</p>
+    <h5>Daily Read: {rating}min</h5>
+    <h5>Time Required: {time}min</h5>
    </div>
   </div>
  );
