@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Time from './addTime/Time';
-import { addToDb, getStore } from './addToDb/fakeDb';
+
 import './Study.css'
 import Read from './study/Read';
 
@@ -22,10 +22,7 @@ const Study = () => {
   .then(res => res.json())
   .then(data => setStudy(data))
  }, [])
- useEffect(()=>{
-  const storeTime = getStore()
-  console.log(storeTime)
- }, [])
+
 
 const handleAdd = (study) =>{
 const newAdd =[...time, study];
@@ -34,7 +31,7 @@ setTime(newAdd)
 const handleTime = (timeSet)=>{
 const newTime = [...add, timeSet]
 setAdd(newTime)
-getStore(timeSet.id)
+
 
 }
 let set = 0;
@@ -46,8 +43,7 @@ const modal = ()=>{
 }
 
 
-const studies = study.filter(x => x.lenght < 4)
-// console.log(studies)
+
 let total = 0;
 time.forEach(times =>{
 total = total + parseFloat(times.time);
