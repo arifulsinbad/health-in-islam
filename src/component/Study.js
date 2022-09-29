@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Time from './addTime/Time';
+import { addToDb, getStore } from './addToDb/fakeDb';
 import './Study.css'
 import Read from './study/Read';
 
@@ -7,17 +8,23 @@ const Study = () => {
  const [study, setStudy] = useState([]);
  const [time, setTime] = useState([])
  const [add, setAdd] = useState([])
+ 
+
 //  console.log(add)
  const timeSet = [
-  {time:10},
-  {time:20},
-  {time:30},
-  {time:40}
+  {id:'1w2wsf', time:10},
+  {id:'1w2wsf', time:20},
+  {id:'1w2wesf', time:30},
+  {id:'1w2sf', time:40}
 ]
  useEffect(() =>{
   fetch('islamic.json')
   .then(res => res.json())
   .then(data => setStudy(data))
+ }, [])
+ useEffect(()=>{
+  const storeTime = getStore()
+  console.log(storeTime)
  }, [])
 
 const handleAdd = (study) =>{
@@ -27,11 +34,15 @@ setTime(newAdd)
 const handleTime = (timeSet)=>{
 const newTime = [...add, timeSet]
 setAdd(newTime)
+getStore(timeSet.id)
+
 }
 let set = 0;
 add.forEach(t =>{
 set = t.time
 })
+addToDb()
+
 
 const studies = study.filter(x => x.lenght < 4)
 // console.log(studies)
@@ -45,7 +56,7 @@ const times = parseFloat(total);
  return (
   <div className='study-c'>
    <div className='conatiner1'>
-   {/* <h2>The Importance of Good Health in Islam</h2> */}
+ 
    {
     study.map(read => <Read key={read.id}
     read={read}
